@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview"
+    android:background="@color/white"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="25dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:id="@+id/newImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/vacunacion"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/newId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/newsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Titulo de la noticia"
+                android:textSize="22sp"
+                android:textColor="@color/purple_700"/>
+
+            <TextView
+                android:id="@+id/newsResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Este es un resumen de la noticia que queremos poner en nuestra aplicacion..."
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/newsDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="04-05-2022"
+                android:textSize="10sp"
+                android:textColor="@color/purple_500"
+                android:gravity="right"
+                android:textStyle="italic"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
