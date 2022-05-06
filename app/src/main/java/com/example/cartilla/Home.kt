@@ -23,6 +23,8 @@ class Home : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var layoutManager: RecyclerView.LayoutManager? = null
+    private lateinit var adapter: NewsAdapter
+    val newsList = ArrayList<News>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,8 @@ class Home : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        createData()
     }
 
     override fun onCreateView(
@@ -42,9 +46,12 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val recycleview = view.findViewById<RecyclerView>(R.id.recycleView)
         layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
         recycleview.layoutManager = layoutManager
+        adapter = NewsAdapter(newsList)
+        recycleview.adapter = adapter
     }
 
     companion object {
@@ -66,4 +73,11 @@ class Home : Fragment() {
                 }
             }*/
     }
+
+    private fun createData(){
+        newsList.add(News(1, R.drawable.vacunacion , "Titulo de la noticia","Este es el resumen de la noticia que queremos leer más adelante respecto a la vacunación..."))
+        newsList.add(News(2, R.drawable.vacunacion , "Titulo de la noticia","Este es el resumen de la noticia que queremos leer más adelante respecto a la vacunación..."))
+        newsList.add(News(3, R.drawable.vacunacion , "Titulo de la noticia","Este es el resumen de la noticia que queremos leer más adelante respecto a la vacunación..."))
+    }
+
 }
