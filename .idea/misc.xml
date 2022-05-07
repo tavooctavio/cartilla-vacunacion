@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/mygradient.xml" value="0.191" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1838768115942029" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.15081521739130435" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.15081521739130435" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.149615478515625" />
         <entry key="app/src/main/res/layout/fragment_shot.xml" value="0.15081521739130435" />
         <entry key="app/src/main/res/layout/news_item.xml" value="0.4632114576256794" />
         <entry key="app/src/main/res/menu/navigation.xml" value="0.20520833333333333" />
