@@ -6,9 +6,10 @@
     tools:context=".Shot">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewShot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Shot" />
+        android:paddingBottom="56dp"/>
 
 </FrameLayout>

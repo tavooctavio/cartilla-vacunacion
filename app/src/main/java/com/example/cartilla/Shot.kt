@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,12 +23,18 @@ class Shot : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var layoutManager:RecyclerView.LayoutManager? = null
+    private lateinit var adapter: ShotsAdapter
+    val shotList = ArrayList<Vacuna>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        createData()
     }
 
     override fun onCreateView(
@@ -35,6 +43,17 @@ class Shot : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shot, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycleViewShot)
+        layoutManager = LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = layoutManager
+        adapter = ShotsAdapter(shotList)
+        recyclerView.adapter = adapter
+
     }
 
     companion object {
@@ -55,5 +74,11 @@ class Shot : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }*/
+    }
+
+    private fun createData(){
+        shotList.add(Vacuna(1,"vacuna 1",true))
+        shotList.add(Vacuna(2,"vacuna 2",true))
+        shotList.add(Vacuna(3,"vacuna 3",false))
     }
 }
